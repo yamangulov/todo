@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 
 const TodoList = () => {
     const items = ['Learn React', 'Build demo App'];
+    const itemsStyle = {
+        fontSize: '20px'
+    };
     return (
-        <ul>
+        <ul style={itemsStyle}>
             <li>{items[0]}</li>
             <li>{items[1]}</li>
         </ul>
@@ -18,17 +21,24 @@ const AppHeader = () => {
 };
 
 const SearchPanel = () => {
+    const searchText = 'Type here to search!';
+    const searchStyle = {
+        fontSize : '20px',
+    };
     return (
-        <input placeholder="search"/>
+        <input style={searchStyle} placeholder={searchText} />
     );
 };
 
 const App = () => {
     const isLoggedIn = true;
-    const loginBox = <span>Login, please!</span>
-    const welcomeBox = <span>Welcome back!</span>
+    const loginBox = <span>Login, please!</span>;
+    const welcomeBox = <span>Welcome back!</span>;
+    const baseStyle = {
+        fontSize : '25px'
+    }
     return (
-        <div>
+        <div style={baseStyle}>
             <div>{(new Date()).toString()}</div>
             {isLoggedIn ? welcomeBox : loginBox}
             <AppHeader />
